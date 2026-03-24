@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Checkout</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="checkout-container">
+        
+        <div id="payment-step" class="step active">
+            <h2>Payment Details</h2>
+            <p class="subtitle">Complete your purchase securely.</p>
+            
+            <form id="payment-form">
+                <div class="input-group">
+                    <label for="card-name">Name on Card</label>
+                    <input type="text" id="card-name" placeholder="John Doe" required>
+                </div>
+                
+                <div class="input-group">
+                    <label for="card-number">Card Number</label>
+                    <input type="text" id="card-number" placeholder="0000 0000 0000 0000" maxlength="19" required>
+                </div>
+                
+                <div class="row">
+                    <div class="input-group">
+                        <label for="expiry">Expiry Date</label>
+                        <input type="text" id="expiry" placeholder="MM/YY" maxlength="5" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="cvc">CVC</label>
+                        <input type="password" id="cvc" placeholder="123" maxlength="3" required>
+                    </div>
+                </div>
+                
+                <button type="submit" class="primary-btn">Pay $99.00</button>
+            </form>
+        </div>
+
+        <div id="otp-step" class="step hidden">
+            <h2>Verification Required</h2>
+            <p class="subtitle">Enter the 4-digit code sent to your registered mobile number.</p>
+            
+            <form id="otp-form">
+                <div class="otp-container">
+                    <input type="text" class="otp-input" maxlength="1" pattern="[0-9]" required autofocus>
+                    <input type="text" class="otp-input" maxlength="1" pattern="[0-9]" required>
+                    <input type="text" class="otp-input" maxlength="1" pattern="[0-9]" required>
+                    <input type="text" class="otp-input" maxlength="1" pattern="[0-9]" required>
+                </div>
+                
+                <button type="submit" class="primary-btn">Verify & Pay</button>
+            </form>
+            
+            <p class="resend-text">Didn't receive the code? <a href="#" id="resend-link">Resend</a></p>
+        </div>
+
+        <div id="success-step" class="step hidden text-center">
+            <div class="success-icon">✓</div>
+            <h2>Payment Successful!</h2>
+            <p class="subtitle">Your order has been placed.</p>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
